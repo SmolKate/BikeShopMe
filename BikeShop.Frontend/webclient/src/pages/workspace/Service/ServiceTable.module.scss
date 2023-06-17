@@ -1,0 +1,47 @@
+@import './src/app/styles/variables/mixins';
+@import './src/app/styles/variables/variables';
+
+.tableBox {
+    //border: 1px solid white;
+    @include widthHeightFull;
+    height: 100%;
+
+    .tableBox_buttons {
+        @include flexBetween;
+        margin-bottom: $defaultSmallMargin;
+
+        .buttons_editBtn {
+            button {
+                height: 55px;
+            }
+        }
+        .buttons_discountField {
+            @include flexColumn;
+
+            .discountField_title {
+
+            }
+            .discountField_value {
+                @include defaultFiledStyle;
+                height: 30px;
+            }
+        }
+        .buttons_resultField {
+            @include defaultFiledStyle;
+            width: 20%;
+            height: 55px;
+        }
+    }
+
+    .tableBox_table {
+        background-color: $themeColorGray;
+        border-radius: $largeBorderRadius;
+        padding: $defaultSmallMargin;
+
+        .scroll_wrapper {
+            @include flexColumn;
+            height: 400px;
+            overflow-x: hidden;
+        }
+    }
+}

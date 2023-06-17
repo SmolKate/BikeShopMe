@@ -1,0 +1,79 @@
+@import '../../app/styles/variables/mixins';
+@import '../../app/styles/variables/variables';
+
+.employeeSalaryModal_mainBlock {
+    @include defaultModalStyle;
+    gap: $defaultLargeMargin;
+    width: 600px;
+
+    .employeeSalaryModal_title {
+        @include modalTitle;
+    }
+
+    .employeeSalaryModal_content {
+        @include flexOnlyBetween;
+        gap: $defaultLargeMargin;
+
+        .content_scrollWrapper {
+            width: 50%;
+
+            .content_employeeList {
+                background-color: $themeColorMilk;
+                padding: $defaultLargeMargin;
+                border-radius: $smallBorderRadius;
+                color: black;
+                @include divExtraSmallMarginBottom;
+                height: 312px;
+                overflow-y: auto;
+
+                .employeeList_item {
+                    padding: 5px;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $themeColorDark;
+                        color: white;
+                        padding: 5px;
+                    }
+                }
+
+                .employeeList_item_active {
+                    background-color: $themeColorDark;
+                    color: white;
+                    padding: 5px;
+                }
+            }
+        }
+        .content_employeeData {
+            width: 50%;
+
+            .employeeData_inputs {
+                > div {
+                    margin-bottom: $defaultSmallMargin;
+                }
+
+                .employeeData_inputsItem {
+                    @include flexBetween;
+                    gap: $defaultSmallMargin;
+
+                    input {
+                        width: 100px;
+                    }
+                }
+
+                .inputs_cancelBtn {
+                    button {
+                        @include defaultMediumButton;
+                    }
+                }
+            }
+
+            .employeeData_saveBtn {
+                button {
+                    padding: 20px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

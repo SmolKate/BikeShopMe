@@ -1,0 +1,392 @@
+﻿@import '../../../../app/styles/variables/mixins';
+@import '../../../../app/styles/variables/variables';
+
+.shop_wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    // для слайдера!
+    //.header_slider {
+    //    width: 1400px;
+    //    overflow: hidden;
+    //
+    //    img {
+    //        width: 1400px;
+    //        height: 800px;
+    //        object-fit: cover;
+    //    }
+    //}
+
+    .header_slider {
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            // скукоживание!
+            height: auto;
+            max-width: 100%;
+
+            //width: 100%;
+            //height: 800px;
+            //object-fit: cover;
+            //
+            //@media(max-width: 1400px) {
+            //    height: 600px;
+            //}
+            //@media(max-width: 1200px) {
+            //    height: 450px;
+            //}
+            //@media(max-width: 990px) {
+            //    height: 300px;
+            //}
+            //@media(max-width: 640px) {
+            //    height: 200px;
+            //}
+        }
+    }
+
+    .content {
+        background-color: $themeColorDark;
+        flex: 1 1 auto; // прибиваем футер вниз
+
+        .menu {
+            background-color: $themeShopColorGray;
+            height: 80px;
+
+            @media(max-width: 940px) {
+                height: 60px;
+            }
+            @media(max-width: 650px) {
+                height: 40px;
+            }
+            @media(max-width: 460px) {
+                height: 30px;
+            }
+            @media(max-width: 390px) {
+                height: 20px;
+            }
+
+            .container {
+                @include defaultContainerForShop; // ограничивающий контейнер
+
+                .menu_items {
+                    display: flex;
+                    //justify-content: space-around;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 80px;
+                    font-size: 32px;
+                    font-weight: bold;
+                    color: black;
+
+                    > div {
+                        a {
+                            text-decoration: none;
+                            color: black;
+                        }
+
+                        a:visited {
+                            color: black;
+                        }
+
+                        a:focus, a:active {
+                            outline: none;
+                        }
+                    }
+
+                    @media(max-width: 940px) {
+                        height: 60px;
+                        font-size: 26px;
+                    }
+                    @media(max-width: 650px) {
+                        height: 40px;
+                        font-size: 18px;
+                    }
+                    @media(max-width: 460px) {
+                        font-size: 14px;
+                        height: 30px;
+                    }
+                    @media(max-width: 390px) {
+                        font-size: 12px;
+                        height: 20px;
+                    }
+
+                    > div {
+                        @include hoverCursorPointer;
+
+                        &:hover {
+                            color: darkgoldenrod;
+                        }
+                    }
+                }
+            }
+        }
+
+        .catalog {
+            .container {
+                @include defaultContainerForShop; // ограничивающий контейнер
+                padding: 0;
+
+                .catalog_items {
+                    @include hoverCursorPointerOpacity;
+                    padding: 40px;
+
+                    > div {
+                        position: relative;
+                        z-index: 1;
+
+                        img {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    @media(max-width: 767px) {
+                        padding: 20px 40px;
+                    }
+
+                    display: grid;
+                    gap: 20px;
+                    grid-template-columns: repeat(4, minmax(50px, auto));
+                    grid-template-rows: repeat(3, minmax(250px, auto));
+                    grid-template-areas:
+                            'photo4 photo5 photo1 photo1'
+                            'photo6 photo2 photo2 photo7'
+                            'photo3 photo3 photo8 photo9';
+
+                    @media(max-width: 1200px) {
+                        grid-template-columns: repeat(3, minmax(50px, 1fr));
+                        grid-template-rows: repeat(4, minmax(250px, auto));
+                        grid-template-areas:
+                            'photo4 photo1 photo1'
+                            'photo2 photo2 photo7'
+                            'photo5 photo6 photo9'
+                            'photo8 photo3 photo3';
+                    }
+
+                    @media(max-width: 767px) {
+                        grid-template-columns: repeat(2, minmax(50px, 1fr));
+                        grid-template-rows: repeat(6, minmax(150px, auto));
+                        grid-template-areas:
+                            'photo1 photo1'
+                            'photo4 photo7'
+                            'photo2 photo2'
+                            'photo5 photo6'
+                            'photo8 photo9'
+                            'photo3 photo3';
+
+                        gap: 10px;
+                    }
+
+                    .catalog_item4 {
+                        grid-area: photo4;
+                    }
+
+                    .catalog_item5 {
+                        grid-area: photo5;
+                    }
+
+                    .catalog_item1 {
+                        grid-area: photo1;
+                        grid-column: span 2;
+                        grid-row: span 1;
+                    }
+
+                    .catalog_item6 {
+                        grid-area: photo6;
+                    }
+
+                    .catalog_item2 {
+                        grid-area: photo2;
+                        grid-column: span 2;
+                        grid-row: span 1;
+                    }
+
+                    .catalog_item7 {
+                        grid-area: photo7;
+                    }
+
+                    .catalog_item3 {
+                        grid-area: photo3;
+                        grid-column: span 2;
+                        grid-row: span 1;
+                    }
+
+                    .catalog_item8 {
+                        grid-area: photo8;
+                    }
+
+                    .catalog_item9 {
+                        grid-area: photo9;
+                    }
+                }
+            }
+        }
+    }
+
+    .workshop_banner {
+        background-color: gray;
+        max-height: 300px;
+        //padding: 0 40px;
+
+        // орректировка высоты баннера
+        @media(max-width: 1090px) {
+            max-height: 200px;
+        }
+        @media(max-width: 890px) {
+            max-height: 170px;
+        }
+        @media(max-width: 770px) {
+            max-height: 150px;
+        }
+        @media(max-width: 690px) {
+            max-height: 130px;
+        }
+        @media(max-width: 590px) {
+            max-height: 110px;
+        }
+        @media(max-width: 490px) {
+            max-height: 90px;
+        }
+        @media(max-width: 450px) {
+            max-height: 70px;
+        }
+
+        .container {
+            @include defaultContainerForShop; // ограничивающий контейнер
+            overflow: hidden;
+            //position: relative;
+            //height: 300px;
+
+            img {
+                //position: absolute;
+                //top: 50%;
+                //left: 50%;
+                //transform: translate(-50%, -50%);
+                //width: 1320px; // (1400 - padding 2*40px)
+                //height: 300px;
+                //object-fit: cover;
+                //object-position: 0 0;
+
+                //background: url("/shared/assets/shop/workshop-banner-text.png") no-repeat 10px center;
+                //background-repeat: no-repeat;
+                //background-size:contain;
+
+                height: auto;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .contacts {
+        background: rgba(0, 0, 0, 0.5);
+
+        .container {
+            @include defaultContainerForShop; // ограничивающий контейнер
+
+            .title {
+                font-size: 40px;
+                color: white;
+                @include flexCenter;
+                padding: 20px 0;
+            }
+
+            .info {
+                @include flexBetween;
+                gap: 20px;
+                width: 100%;
+                padding-bottom: 20px;
+
+                > div {
+                    border: 1px solid white;
+                    background-color: #5f5f5f;
+                    //border-radius: $smallBorderRadius;
+                    //padding: $defaultSmallMargin;
+                    width: 50%;
+                    height: 404px;
+                    overflow: hidden;
+
+                    @media(max-width: 870px) {
+                        width: 100%;
+                    }
+                }
+
+                @media(max-width: 870px) {
+                    flex-wrap: wrap;
+                }
+
+                .info_map {
+                    img {
+                        //object-fit: cover;
+                    }
+                }
+
+                .info_address {
+                    color: white;
+                    @include divSmallMarginBottom;
+                    @include flexColumnOnly;
+                    justify-content: space-between;
+                    padding: $defaultLargeMargin;
+
+                    > div {
+                        height: 100%;
+                    }
+
+                    .address_title {
+                        font-size: 20px;
+                        font-weight: bold;
+                        text-align: center;
+                        height: 20%;
+                    }
+
+                    .address_time {
+                        @include flexOnlyBetween;
+                        gap: $defaultLargeMargin;
+                        height: 30%;
+
+                        > div {
+                            border: 1px solid white;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            @include divSmallMarginBottom;
+                            text-align: center;
+                        }
+
+                        @media(max-width: 420px) {
+                            height: 35%;
+                        }
+
+                        .time_one {
+
+                        }
+
+                        .time_two {
+
+                        }
+                    }
+
+                    .address_gallery {
+                        border: 1px solid white;
+                        height: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    //.map {
+    //    position: relative;
+    //
+    //    img {
+    //        width: 100%;
+    //    }
+    //}
+}

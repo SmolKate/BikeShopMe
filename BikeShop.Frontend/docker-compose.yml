@@ -1,0 +1,14 @@
+version: '3'
+services:
+  bikeshop.frontend:
+    container_name: bikeshop-frontend
+    image: nomadrilius/bikeshop.frontend
+    hostname: bikeshop.frontend
+    ports: 
+      - 3000:3000
+    restart: on-failure
+    volumes:
+      - ./client:/app
+      - ./app/node_modules
+    stdin_open: true
+    tty: true

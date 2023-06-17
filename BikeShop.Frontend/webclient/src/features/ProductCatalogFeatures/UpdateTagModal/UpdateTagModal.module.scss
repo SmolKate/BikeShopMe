@@ -1,0 +1,15 @@
+@import '../../../app/styles/variables/mixins';
+@import '../../../app/styles/variables/variables';
+
+.updateTagModal_mainBox {
+    @include defaultModalStyle;
+
+    .updateTagModal_inputs {
+        @include divSmallMarginBottom;
+
+        button {
+            height: 40px;
+            width: 100%;
+        }
+    }
+}

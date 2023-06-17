@@ -1,0 +1,57 @@
+@import '../../../app/styles/variables/mixins';
+@import '../../../app/styles/variables/variables';
+
+.tableItem_box {
+    @include flexBetween;
+    width: 75%; // ?
+    border: 2px solid darkorange;
+    border-radius: $smallBorderRadius;
+    padding: 3px $defaultSmallMargin;
+    margin-top: -4px;
+
+    .tableItem_title {
+        word-break: break-word;
+        margin-right: $defaultSmallMargin;
+        width: 150px;
+
+        .editableSpanInput_description {
+            width: 150px;
+            height: 30px;
+            font-size: 16px;
+        }
+        .editableSpanSpan_description {
+            height: 40px;
+            word-break: break-word;
+            overflow-y: auto;
+            font-size: 16px;
+        }
+    }
+
+    .tableItem_numbers {
+        @include flexCenter;
+
+        .tableItem_price {
+            color: black;
+            background-color: $themeColorWhite;
+            border-radius: $smallBorderRadius;
+            padding: 5px;
+            margin-right: $defaultSmallMargin;
+            width: 100px;
+            @include flexCenter;
+
+            .editableSpanInput_price {
+                width: 70px;
+                height: 30px;
+                font-size: 16px;
+            }
+            .editableSpanSpan_price {
+                display: flex;
+                align-items: center;
+                height: 30px;
+                word-break: break-word;
+                overflow-y: auto;
+                font-size: 16px;
+            }
+        }
+    }
+}

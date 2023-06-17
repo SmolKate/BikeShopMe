@@ -1,0 +1,14 @@
+@import '../../../app/styles/variables/mixins';
+@import '../../../app/styles/variables/variables';
+
+.createWorkGroupModal_mainBox {
+    @include defaultModalStyle;
+
+    .createWorkGroupModal_inputs {
+        margin-bottom: $defaultLargeMargin;
+        @include divLargeMarginBottom;
+    }
+    .updateWorkGroupModal_buttons {
+        @include workAndProductModalsButtonBlock;
+    }
+}

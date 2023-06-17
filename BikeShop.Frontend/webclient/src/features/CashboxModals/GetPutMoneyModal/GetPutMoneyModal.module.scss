@@ -1,0 +1,44 @@
+@import '../../../app/styles/variables/mixins';
+@import '../../../app/styles/variables/variables';
+
+.getPutMoneyModal_mainBox {
+    @include defaultModalStyle;
+    @include flexColumn;
+    width: 520px;
+
+    .getPutMoneyModal_title {
+        @include modalTitle;
+    }
+
+    .getPutMoneyModal_content {
+        @include flexOnlyBetween;
+        gap: $defaultLargeMargin;
+
+        .content_report {
+            @include encashmentTextarea(250px, 100%);
+        }
+
+        .content_info {
+            .infoBlock {
+                margin-bottom: $defaultLargeMargin;
+
+                .sumInput {
+                    margin-bottom: $defaultLargeMargin;
+                }
+                .infoBlock_radioButtons {
+
+                }
+            }
+            .buttonsBlock {
+                width: 100%;
+                @include flexColumnOnly;
+                gap: $defaultSmallMargin;
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}

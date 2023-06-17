@@ -1,0 +1,88 @@
+@import '../../app/styles/variables/mixins';
+@import '../../app/styles/variables/variables';
+
+.payModal_mainBox {
+    @include defaultModalStyle;
+    @include divSmallMarginBottom;
+    width: 350px;
+
+    > * {
+        button {
+            height: 40px;
+        }
+    }
+
+    .payModal_header {
+        @include flexColumn;
+
+        .header_text {
+
+        }
+        .header_sum {
+            @include largeFontSize;
+        }
+    }
+
+    .payModal_clientCard {
+        margin-bottom: 20px !important;
+    }
+
+    .payModal_payType {
+        :first-child {
+            margin-bottom: 5px;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+
+    .payModal_cashback {
+        @include flexColumn;
+        margin-bottom: 0 !important;
+
+        .cashback_text {
+
+        }
+        .cashback_sum {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+
+    .payModal_cashValue {
+        @include defaultFiledStyle;
+        min-width: 100%;
+    }
+
+    .payModal_cashbackBlock {
+        @include flexColumn;
+
+        .cashbackBlock_info {
+            margin-bottom: $defaultSmallMargin;
+
+            .cashbackBlock_text {
+
+            }
+            .cashbackBlock_value {
+                @include largeFontSize;
+            }
+        }
+
+        .cashbackBlock_buttons {
+            width: 100%;
+
+            .cancelButton {
+                @include deleteButton;
+                margin-bottom: $defaultSmallMargin;
+            }
+            //:first-child {
+            //    margin-bottom: $defaultSmallMargin;
+            //}
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+}

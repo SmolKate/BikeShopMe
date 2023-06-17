@@ -1,0 +1,224 @@
+@import '../../../../app/styles/variables/mixins';
+@import '../../../../app/styles/variables/variables';
+
+.shop_productItem_mainBox {
+    padding: 20px 0;
+
+    .container {
+        @include defaultContainerForShop; // ограничивающий контейнер
+        @include flexColumn;
+
+        > div {
+            width: 100%;
+        }
+
+        .cloudCategory {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: $defaultLargeMargin;
+            margin-bottom: $defaultLargeMargin;
+            flex-wrap: wrap;
+
+            @media (max-width: 550px) {
+                justify-content: center;
+            }
+
+            .cloudCategory_noTags {
+                color: white;
+                background-color: $themeColorGray;
+                border-radius: $smallBorderRadius;
+                padding: $divButtonPadding;
+            }
+
+            .cloudCategory_item {
+                color: white;
+                background-color: $themeColorGray;
+                border-radius: $smallBorderRadius;
+                padding: $divButtonPadding;
+            }
+        }
+
+        .product {
+            //border: 1px solid black;
+            @include flexOnlyBetween;
+            gap: $defaultExtraLargeMargin;
+            margin-bottom: $defaultExtraLargeMargin;
+
+            @media (max-width: 690px) {
+                flex-wrap: wrap;
+            }
+
+            .product_images {
+                border: 1px solid black;
+                width: 65%;
+                display: flex;
+                justify-content: flex-end;
+                max-height: 430px;
+
+                img {
+                    max-height: 428px;
+                }
+
+                @media (max-width: 890px) {
+                    width: 70%;
+                }
+
+                @media (max-width: 690px) {
+                    width: 100%;
+                }
+
+                // additionalClass
+                .imageGallery {
+                    background-color: #1c508a; // для проверки
+                    width: 100%;
+
+                    // фон при фуллскрине
+                    .image-gallery-content {
+                        background-color: #2f2f2f;
+                    }
+                    .image-gallery-image {
+                        max-height: 430px;
+                    }
+                }
+            }
+
+            .product_info {
+                //border: 1px solid black;
+                @include flexColumn;
+                @include divLargeMarginBottom;
+
+                @media (max-width: 890px) {
+                    width: 50%;
+                }
+
+                @media (max-width: 690px) {
+                    width: 100%;
+                }
+
+                .product_title {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+
+                .product_price {
+                    font-weight: bold;
+                    font-size: 24px;
+                    color: red;
+                }
+
+                .product_description {
+                    line-height: 1.3;
+                }
+
+                .product_select {
+                    width: 100%;
+                    color: black;
+                    @include divSmallMarginBottom;
+
+                    .product_selectBox {
+                        color: black;
+                    }
+                }
+
+                .product_buy {
+                    @include flexOnlyBetween;
+                    align-items: center;
+                    gap: $defaultExtraLargeMargin;
+
+                    .product_available {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+
+                        .isAvailable {
+                            @include CatalogProductItemIsAvailableLabel($filterButtonReadyColor);
+                        }
+
+                        .notAvailable {
+                            @include CatalogProductItemIsAvailableLabel($filterButtonWaitingColor);
+                        }
+                    }
+
+                    .product_addToCart {
+                        button {
+                            padding: 10px;
+                            background-color: $bgColorButtonConfirm;
+                            border-radius: $smallBorderRadius;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        .description {
+
+            .description_chapters {
+                @include flexOnlyBetween;
+                align-items: center;
+
+                > div {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 24px;
+                    font-weight: bold;
+                    opacity: 50%;
+                    padding: 10px 0;
+                    @include hoverCursorPointer;
+
+                    @media (max-width: 590px) {
+                        font-size: 18px;
+                    }
+                    @media (max-width: 450px) {
+                        font-size: 16px;
+                    }
+                    @media (max-width: 390px) {
+                        font-size: 14px;
+                    }
+                }
+
+                // универсальный стиль active
+                .description_active {
+                    background-color: white;
+                    border-bottom: 2px solid black;
+                    opacity: 100%;
+                }
+
+                .chapters_characteristic {
+
+                }
+
+                .characteristic_active {
+                    background-color: white;
+                    opacity: 100%;
+                }
+
+                .chapters_details {
+
+                }
+
+                .details_active {
+                    background-color: white;
+                    opacity: 100%;
+                }
+
+                .chapters_delivery {
+
+                }
+
+                .delivery_active {
+                    background-color: white;
+                    opacity: 100%;
+                }
+            }
+
+            .description_content {
+                background-color: white;
+                padding: $defaultLargeMargin;
+                min-height: 150px;
+                line-height: 1.3;
+            }
+        }
+    }
+}

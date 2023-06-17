@@ -1,0 +1,53 @@
+@import '../../../../app/styles/variables/mixins';
+@import '../../../../app/styles/variables/variables';
+
+.profile_mainBox {
+    padding: 20px 0;
+
+    .container {
+        @include defaultContainerForShop; // ограничивающий контейнер
+        @include flexOnlyBetween;
+        width: 100%;
+        gap: $defaultExtraLargeMargin;
+
+        .profile_menu {
+            width: 30%;
+
+            .menu_user {
+                &:hover {
+                    background-color: $bgColorButtonConfirm;
+                    cursor: pointer;
+                }
+
+                @include shopProfileMenuUser(transparent);
+            }
+
+            .menu_user_active {
+                @include shopProfileMenuUser($bgColorButtonConfirm);
+            }
+
+
+            .menu_list {
+                @include divExtraLargeMarginBottom;
+                @include flexColumn;
+                align-items: flex-start;
+                font-size: 24px;
+                font-weight: bold;
+                padding-left: 100px;
+
+                .menu_listItem {
+                    @include shopProfileMenuItem;
+                }
+
+                .menu_listItem_active {
+                    color: orange;
+                    @include shopProfileMenuItem;
+                }
+            }
+        }
+
+        .profile_content {
+            width: 70%;
+        }
+    }
+}

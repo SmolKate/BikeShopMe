@@ -1,0 +1,19 @@
+@import '../../../app/styles/variables/mixins';
+@import '../../../app/styles/variables/variables';
+
+.stuffProfileWork_mainBlock {
+    font-size: 20px;
+
+    .stuffProfileWork_title {
+        border-bottom: 2px solid white;
+        padding-bottom: $defaultSmallMargin;
+        margin-bottom: $defaultLargeMargin;
+    }
+    .stuffProfileWork_hours {
+        @include divSmallMarginBottom;
+        margin-bottom: $defaultExtraLargeMargin;
+    }
+    .stuffProfileWork_salary {
+        @include profileAdminSalaryFormStyles($defaultLargeMargin);
+    }
+}

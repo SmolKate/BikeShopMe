@@ -1,0 +1,83 @@
+@import '../../app/styles/variables/mixins';
+@import '../../app/styles/variables/variables';
+
+.tableCreationModal_out_container {
+    background-color: $themeColorGray;
+    height: 100vh;
+    padding: $defaultLargeMargin;
+}
+
+.tableCreationModal_container {
+    background-color: $themeColorDark;
+    border-radius: $smallBorderRadius;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    // margin: $defaultLargeMargin;
+
+}
+
+.tableCreationModal_header {
+    
+        width: 100%;
+        display: flex;
+        gap: $defaultExtraLargeMargin;
+        padding: $defaultLargeMargin;
+        border-radius: $smallBorderRadius;
+
+        > div {
+            width: 100%;
+        }
+        button, input, label {
+            padding: $defaultSmallMargin;
+            width: 100%;
+        }
+
+        button, label {
+            background-color: $filterButtonReadyColor;
+        }
+
+        label {
+            text-align: center;
+            border-radius: 5px;
+        }
+}
+
+.tableCreationModal_body_container {
+    height: 100%;
+    overflow: auto;
+    background-color: $themeColorMilk;
+    margin: $defaultLargeMargin;
+    margin-top: 0px;
+    padding: $defaultExtraSmallMargin;
+    border-radius: $smallBorderRadius; 
+    color: black;
+
+}
+
+.tableCreationModal_body {
+    height: 100%;
+    background-color: $themeColorMilk;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    padding: $defaultExtraSmallMargin;
+}
+
+.tableCreationModal_tbody {
+    
+    > tr > td {
+        border: 1px solid $themeColorDark;
+        border-collapse: collapse;
+        padding: $defaultExtraSmallMargin;
+    }
+}
+
+.input_file {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }

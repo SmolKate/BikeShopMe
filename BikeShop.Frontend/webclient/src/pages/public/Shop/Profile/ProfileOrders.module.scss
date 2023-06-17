@@ -1,0 +1,165 @@
+@import '../../../../app/styles/variables/mixins';
+@import '../../../../app/styles/variables/variables';
+
+.profileOrders_mainBox {
+    .profileOrders_title {
+        margin-bottom: $defaultSmallMargin;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .profileOrders_content {
+
+        .profileOrders_orderItem {
+            padding: $defaultSmallMargin;
+            background-color: $themeColorMilk;
+            border-radius: $extraSmallBorderRadius;
+            margin-bottom: $defaultSmallMargin;
+            min-height: 70px;
+
+            .orderItem_mainPart {
+                @include flexOnlyBetween;
+                align-items: center;
+
+                .orderItem_status {
+                    @include flexCenter;
+
+                    // надо зарефакторить!!!
+                    .status_color {
+                        @include orderStatus($bgColorProfileStatusWaitingPayment);
+                    }
+                    .status_WaitingPayment {
+                        @include orderStatus($bgColorProfileStatusWaitingPayment);
+                    }
+                    .status_WaitingPackage {
+                        @include orderStatus($bgColorProfileStatusWaitingPackage);
+                    }
+                    .status_Ready {
+                        @include orderStatus($bgColorProfileStatusReady);
+                    }
+                    .status_Canceled {
+                        @include orderStatus($bgColorProfileStatusCanceled);
+                    }
+
+                    .status_data {
+                        @include flexColumn;
+                        gap: 5px;
+
+                        .status_data_date {
+
+                        }
+
+                        .status_data_text {
+                            font-size: 18px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                .orderItem_sum {
+                    @include flexColumn;
+                    gap: 5px;
+
+                    .sum_price {
+
+                    }
+
+                    .sum_result {
+                        span {
+                            color: $bgColorButtonConfirm;
+                            font-size: 18px;
+                            font-weight: bold;
+                            //border: 1px solid $bgColorButtonConfirm;
+                        }
+                    }
+                }
+
+                .orderItem_info {
+                    @include flexCenter;
+                    gap: $defaultSmallMargin;
+
+                    .info_image {
+                        @include flexCenter;
+                        color: white;
+                        background-color: $themeColorDark;
+                        border-radius: $extraSmallBorderRadius;
+
+                        img {
+                            width: 80px;
+                            height: auto;
+                        }
+                    }
+
+                    .info_isCollapsed {
+                        button {
+                            background-color: $themeColorDark;
+                            width: 130px;
+                        }
+                    }
+                }
+            }
+
+            .orderItem_collapsedPart {
+                padding-top: $defaultLargeMargin;
+
+                .collapsedPart_statusRow {
+                    background-color: $bgColorProfileStatusWaitingPayment;
+                    border-radius: $extraSmallBorderRadius;
+                    padding: $defaultSmallMargin;
+                    margin-bottom: $defaultSmallMargin;
+                    //@include flexCenter;
+                    text-align: center;
+                }
+                .collapsedPart_title {
+                    font-weight: bold;
+                    text-align: center;
+                    text-decoration: underline;
+                    margin-bottom: $defaultSmallMargin;
+                }
+                .collapsedPart_deliveryType {
+                    margin-bottom: $defaultSmallMargin;
+                }
+                .collapsedPart_deliveryDetails {
+                    @include flexOnlyBetween;
+                    //gap: $defaultSmallMargin;
+                }
+                .collapsedPart_discount {
+                    padding: $defaultSmallMargin 0;
+                }
+                .collapsedPart_products {
+                    margin-bottom: $defaultSmallMargin;
+
+                    .products_title {
+                        margin-bottom: $defaultSmallMargin;
+                    }
+                    .products_list {
+                        margin-bottom: $defaultLargeMargin;
+
+                        > div {
+                            margin-bottom: $defaultSmallMargin;
+                            color: white;
+                        }
+                        .list_item {
+                            padding: $defaultSmallMargin;
+                            background-color: $themeColorDark;
+                            border-radius: $extraSmallBorderRadius;
+                        }
+                    }
+                }
+                .collapsedPart_sum {
+                    @include flexColumn;
+                    align-items: flex-end;
+
+                    > div {
+                        margin-bottom: $defaultSmallMargin;
+                    }
+                    >:last-child {
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+
+                }
+            }
+        }
+    }
+}

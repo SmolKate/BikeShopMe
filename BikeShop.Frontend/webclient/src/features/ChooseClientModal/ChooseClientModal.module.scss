@@ -1,0 +1,69 @@
+@import '../../app/styles/variables/mixins';
+@import '../../app/styles/variables/variables';
+
+.clientModal_mainBox {
+    @include defaultModalStyle;
+    padding: $defaultLargeMargin;
+
+    .clientModal_searchBlock {
+        @include flexColumn;
+        @include divLargeMarginBottom;
+        margin-bottom: 30px;
+
+        .clientModal_searchBlock_title {
+            @include titleCenter;
+        }
+
+        .clientModal_searchBlock_input {
+            margin-bottom: $defaultSmallMargin;
+            width: 100%;
+        }
+
+        .clientModal_searchBlock_textField {
+           @include flexColumn;
+            min-width: 100%;
+            height: 100px;
+            overflow: auto;
+            border: 2px solid $themeColorMilk;
+            padding: 10px;
+
+            .textField_contentItem {
+                @include hoverItem;
+            }
+            .textField_loader {
+                // надо сделать по центру
+            }
+        }
+    }
+
+    .clientModal_addClient {
+        @include flexColumn;
+
+        > div {
+            width: 100%;
+        }
+
+        .addClient_title {
+            @include titleCenter;
+            margin-bottom: $defaultSmallMargin;
+        }
+        .addClient_inputs {
+            > div {
+                width: 100%;
+                margin-bottom: $defaultSmallMargin;
+            }
+        }
+        .addClient_buttonsBlock {
+            @include flexOnlyBetween;
+            gap: $defaultLargeMargin;
+
+            > div {
+                width: 100%;
+                button {
+                    width: 100%;
+                    padding: $smallButtonPadding;
+                }
+            }
+        }
+    }
+}

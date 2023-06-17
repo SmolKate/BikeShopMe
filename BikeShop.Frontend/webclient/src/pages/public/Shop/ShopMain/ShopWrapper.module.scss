@@ -1,0 +1,23 @@
+@import '../../../../app/styles/variables/mixins';
+@import '../../../../app/styles/variables/variables';
+
+.shop_wrapper {
+    @include defaultContainer;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /*чтобы прибить футер к низу*/
+    min-width: 100%;
+
+    // можно задать свойство flex здесь или в каждом children
+    .shop_main {
+        flex: 1 1 auto; /*чтобы прибить футер к низу*/
+        color: black;
+        //background-color: $themeColorSomeWhite;
+        background-color: white;
+        margin-top: 80px;
+
+        @media (max-width: 880px) {
+            margin-top: var(--navbar-shop-height-mobile);
+        }
+    }
+}

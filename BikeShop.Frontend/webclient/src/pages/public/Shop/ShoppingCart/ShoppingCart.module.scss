@@ -1,0 +1,155 @@
+@import '../../../../app/styles/variables/mixins';
+@import '../../../../app/styles/variables/variables';
+
+.cart_mainBox {
+    position: relative;
+
+    @media(max-width: 650px) {
+        margin-right: 30px;
+    }
+    @media(max-width: 490px) {
+        margin-right: 0;
+    }
+
+    .cart_count {
+        position: absolute;
+        top: 15px;
+        right: -10px;
+        @include flexCenter;
+        background-color: yellow;
+        border-radius: 50%;
+        color: black;
+        width: 20px;
+        height: 20px;
+    }
+
+    .cart_content {
+        position: absolute;
+        top: 45px;
+        right: -50px;
+        background-color: $themeColorGray;
+        //border-radius: $defaultSmallMargin;
+        border: 1px solid white;
+        padding: $defaultLargeMargin;
+        //min-width: 400px;
+        //width: min-content;
+        z-index: 100;
+        //@include flexColumnOnly;
+
+        @media(max-width: 790px) {
+            right: -150px;
+        }
+        @media(max-width: 590px) {
+            right: -50px;
+        }
+
+        .cart_cartList {
+            @include divSmallMarginBottom;
+            padding-right: 10px;
+            max-height: 350px;
+            overflow-y: auto;
+
+            .cartListItem {
+                @include flexBetween;
+                background-color: $themeColorMilk;
+                padding: $defaultSmallMargin;
+                border-radius: $defaultSmallMargin;
+
+                .cartListItem_content {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .cartListItem_image {
+                        img {
+                            filter: none !important;
+                            height: 50px;
+                            width: auto;
+                        }
+                    }
+
+                    .cartListItem_info {
+                        color: black;
+                        margin-right: 5px;
+                        min-width: 200px;
+
+                        .cartListItem_name {
+                            margin-bottom: 5px;
+                        }
+                        .cartListItem_price {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+
+                            > div:not(:last-child) {
+                                margin-right: $defaultExtraSmallMargin;
+                            }
+
+                            button {
+                                @include flexCenter;
+                                width: 20px;
+                                height: 20px;
+                            }
+
+                            .cartListItem_quantity {
+                                display: flex;
+                                justify-content: center;
+                                width: 30px;
+                                padding: 1px 10px;
+                                background-color: white;
+                            }
+                            .cartListItem_quantityUnit {
+                                width: 40px;
+                            }
+                            .cartListItem_productTotalSum {
+                                width: 60px;
+                            }
+                        }
+                    }
+                }
+
+                .cartListItem_deleteIcon {
+                    img {
+                        filter: none !important;
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        filter: contrast(3);
+                    }
+                }
+            }
+
+            .emptyCart {
+                @include flexCenter;
+                overflow: hidden;
+                text-align: center;
+                min-width: 100px;
+            }
+        }
+
+        .cart_result {
+            @include flexBetween;
+            border-top: 2px solid $themeColorMilk;
+            margin-top: $defaultSmallMargin;
+            padding-top: $defaultSmallMargin;
+
+            .result_fieldset {
+                border-radius: $smallBorderRadius;
+
+                .result_text {
+                    text-align: center;
+                    font-size: 20px;
+                }
+            }
+
+            .result_orderButton {
+                button {
+                    height: 40px;
+                }
+            }
+        }
+    }
+}

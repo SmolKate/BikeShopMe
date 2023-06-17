@@ -1,0 +1,254 @@
+@import '../../app/styles/variables/mixins';
+@import '../../app/styles/variables/variables';
+
+.userRoleModal_mainBox {
+  @include defaultModalStyle;
+  width: 700px;
+  height: 750px;
+
+  > div {
+    @include flexOnlyBetween;
+    gap: $defaultLargeMargin;
+  }
+
+  .userRoleModal_header {
+    margin-bottom: $defaultLargeMargin;
+    width: 100%;
+    height: 70%;
+
+    .header_groups {
+      width: 30%;
+      @include flexColumnOnly;
+
+      .groups_groups {
+        height: 90%;
+        padding: $defaultSmallMargin;
+        border-radius: $smallBorderRadius;
+        background-color: $themeColorGray;
+        margin-bottom: $defaultSmallMargin;
+
+        .groups_groupsWrapper {
+          @include divSmallMarginBottom;
+          height: 100%;
+          padding-right: 5px;
+          overflow-y: auto;
+
+          .groups_groupsItem {
+            padding: $defaultSmallMargin;
+            border-radius: $smallBorderRadius;
+            background-color: $themeColorMilk;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+          }
+
+          .groups_groupsItem:hover {
+            background-color: #808080FF;
+          }
+
+          .groups_groupsItem_selected {
+            background-color: $themeColorDark;
+            color: white;
+
+            padding: $defaultSmallMargin;
+            border-radius: $smallBorderRadius;
+            font-size: 20px;
+            text-align: center;
+          }
+        }
+      }
+
+      .createGroup {
+        height: 10%;
+        width: 100%;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+
+    .header_roles {
+      width: 70%;
+      @include flexColumnOnly;
+      gap: $defaultSmallMargin;
+
+      .roles_description {
+        height: 45%;
+        padding: $defaultSmallMargin;
+        border-radius: $smallBorderRadius;
+        background-color: $themeColorGray;
+
+        .roles_descriptionWrapper {
+          @include divSmallMarginBottom;
+          height: 100%;
+          padding-right: 5px;
+          overflow-y: auto;
+
+          .roles_descriptionItem_selected {
+            background-color: $themeColorMilk;
+          }
+
+          .roles_descriptionItem_nselected {
+            background-color: #808080FF;
+          }
+
+          .roles_descriptionItem {
+            padding: $defaultSmallMargin;
+            border-radius: $smallBorderRadius;
+            color: black;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: $defaultLargeMargin;
+
+
+            > div {
+              word-break: break-word;
+            }
+
+            .descriptionItem_name {
+              width: 80%;
+            }
+
+            .roles_descriptionItem_description {
+              width: 20%;
+            }
+
+            .d_b:hover {
+              background: white;
+            }
+          }
+        }
+      }
+
+      .roles_tabs {
+        height: 10%;
+        @include flexBetween;
+        gap: $defaultLargeMargin;
+
+        .tabs_toggle {
+          width: 85%;
+          @include flexBetween;
+        }
+
+        .tabs_arrows {
+          width: 15%;
+          @include flexBetween;
+
+          img {
+            width: 30px;
+            height: 30px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          //> div {
+          //    svg {
+          //        width: 30px;
+          //        height: 30px;
+          //
+          //        &:hover {
+          //            cursor: pointer;
+          //            stroke: gold;
+          //        }
+          //    }
+          //}
+        }
+      }
+
+      .roles_roles {
+        height: 45%;
+        padding: $defaultSmallMargin;
+        border-radius: $smallBorderRadius;
+        background-color: $themeColorGray;
+
+        .roles_rolesWrapper {
+          @include divSmallMarginBottom;
+          height: 100%;
+          padding-right: 5px;
+          overflow-y: auto;
+
+          .roles_rolesItem {
+            padding: $defaultSmallMargin;
+            border-radius: $smallBorderRadius;
+            background-color: $themeColorMilk;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+          }
+
+          .roles_rolesItem_selected {
+            padding: $defaultSmallMargin;
+            border-radius: $smallBorderRadius;
+            background-color: #808080FF;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .userRoleModal_bottom {
+    width: 100%;
+    height: 27%; // 3% - поправка на нижний отступ
+
+    .bottom_deals {
+      width: 70%;
+      height: 100%;
+      @include flexColumnOnly;
+      justify-content: space-between;
+      gap: $defaultSmallMargin;
+
+      .deals_select {
+        height: 10%; // ?
+      }
+
+      .deals_content {
+        padding: $defaultSmallMargin;
+        border-radius: $smallBorderRadius;
+        background-color: $themeColorGray;
+        height: 70%; // ?
+
+        .deals_contentWrapper {
+          @include divSmallMarginBottom;
+          height: 100%;
+          padding-right: 5px;
+          overflow-y: auto;
+
+          .deals_contentItem {
+            display: flex;
+            justify-content: space-between;
+            padding: $defaultSmallMargin;
+            border-radius: $smallBorderRadius;
+            background-color: $themeColorMilk;
+            color: black;
+            font-size: 20px;
+
+            .del_but {
+
+            }
+
+            .del_but:hover {
+              background: white;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom_buttons {
+      width: 30%;
+      @include flexColumnOnly;
+      justify-content: space-between;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
